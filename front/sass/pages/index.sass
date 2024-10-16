@@ -1,0 +1,93 @@
+$blue: #005
+$white: #ffffff
+$magenta: #FD267E
+
+$font-suisseintl-semb: SuisseIntl-SemiBold, sans-serif
+
+body
+  overscroll-behavior: none
+  img
+    max-width: 100%
+    height: auto
+
+.wrapper
+  width: 100%
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  overscroll-behavior: none
+  height: 100%
+  display: flex
+
+.banner
+  position: relative
+  width: 50%
+  display: flex
+  justify-content: center
+  align-items: flex-end
+  height: calc(var(--vh, 1vh) * 100)
+  overflow: hidden
+  padding-bottom: 8%
+  @media screen and (orientation: landscape)
+    background: url("../img/bg.jpg") no-repeat 50%/cover
+  @media screen and (min-width: 1024px) and (max-width: 1366px)
+    background: url("../img/bg-tab.jpg") no-repeat 40%/cover
+  @media screen and (max-width: 1280px) and (min-height: 1240px) and (orientation: portrait)
+    background: url("../img/bg-tab-large.jpg") no-repeat 40%/cover
+  &__info
+    display: flex
+    flex-direction: column
+    align-items: center
+    &-title
+      font-family: $font-suisseintl-semb
+      font-size: 58px
+      line-height: 58px
+      color: $white
+      text-transform: uppercase
+      letter-spacing: 3.19px
+      text-shadow: 0 3.815px 0 #000
+    &-bonus
+      margin-top: 20px
+      display: flex
+      &-left,&-right
+        font-family: $font-suisseintl-semb
+        font-size: 58px
+        line-height: 58px
+        color: $white
+        height: 100px
+        display: flex
+        justify-content: center
+        align-items: center
+        letter-spacing: 3.19px
+      &-left
+        background: $blue
+        padding: 3px 55px 0 27px
+        position: relative
+        &:after
+          content: ""
+          background: url("../img/plus.svg") no-repeat 0 0/contain
+          width: 67px
+          height: 52px
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          right: -35px
+        span
+          font-family: $font-suisseintl-semb
+          font-size: 27px
+          line-height: 32px
+          margin: 0 5px -16px 0
+          text-transform: uppercase
+          letter-spacing: 1.485px
+      &-right
+        background: $magenta
+        padding: 3px 80px 0 86px
+        text-transform: uppercase
+    &-txt
+      font-family: $font-suisseintl-semb
+      font-size: 11px
+      line-height: 17.6px
+      color: $white
+      text-shadow: 0 1.908px 0 #000
+      margin-top: 23px
+      align-self: flex-start
+      letter-spacing: 0.605px
+      text-transform: uppercase
